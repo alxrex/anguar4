@@ -1,0 +1,22 @@
+<h2>Categorias</h2>
+<div>
+  <label>Nombre:</label> <input #categoriaName />
+  <button (click)="add(categoriaName.value); categoriaName.value=''">
+    Agregar
+  </button>
+</div>
+<ul class="heroes">
+  <li *ngFor="let categoria of categorias" (click)="onSelect(categoria)"
+      [class.selected]="categoria === selectedCategoria">
+    <span class="badge">{{categoria.id}}</span>
+    <span>{{categoria.name}}</span>
+    <button class="delete"
+      (click)="delete(categoria); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedCategoria">
+  <h2>
+    {{selectedCategoria.name | uppercase}} es mi categoria
+  </h2>
+  <button (click)="gotoDetail()">Ver Detalle</button>
+</div>

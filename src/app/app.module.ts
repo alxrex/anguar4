@@ -11,6 +11,9 @@ import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
+import { CategoriasComponent }  from './catalogos/categorias.component';
+import { CategoriasService }   from './catalogos/categorias.service';
+
 import { HeroesComponent }      from './heroes.component';
 import { HeroDetailComponent }  from './hero-detail.component';
 import { HeroService }          from './hero.service';
@@ -27,11 +30,12 @@ import { HeroSearchComponent }  from './hero-search.component';
   declarations: [
     AppComponent,
     DashboardComponent,
+    CategoriasComponent,
     HeroDetailComponent,
     HeroesComponent,
     HeroSearchComponent
   ],
-  providers: [ HeroService ],
+  providers: [ CategoriasService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
