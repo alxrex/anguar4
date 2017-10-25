@@ -3,31 +3,31 @@ import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 
-import { Categoria }        from './Categoria';
-import { CategoriaService } from './Categoria.service';
+import { Categoria }        from './categoria';
+import { CategoriasService } from './categorias.service';
 
 @Component({
   selector: 'caegoria-detail',
   templateUrl: './categoria-detail.component.html',
   styleUrls: [ './categoria-detail.component.css' ]
 })
-export class HeroDetailComponent implements OnInit {
-  categoria: Hero;
+export class CategoriaDetailComponent implements OnInit {
+	categoria: Categoria;
 
   constructor(
-    private categoriaService: HeroService,
+    private categoriasService: CategoriasService,
     private route: ActivatedRoute,
     private location: Location
   ) {}
 
   ngOnInit(): void {
     this.route.paramMap
-      .switchMap((params: ParamMap) => this.categoriaService.getHero(+params.get('id')))
+      .switchMap((params: ParamMap) => this.categoriasService.getCategoria(+params.get('id')))
       .subscribe(categoria => this.categoria = categoria);
   }
 
   save(): void {
-    this.categoriaService.update(this.categoria)
+    this.categoriasService.update(this.categoria)
       .then(() => this.goBack());
   }
 

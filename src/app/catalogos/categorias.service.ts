@@ -13,7 +13,7 @@ export class CategoriasService {
 
   constructor(private http: Http) { }
 
-  getCategorias(): Promise<Categoria[]> {
+  getCategories(): Promise<Categoria[]> {
     return this.http.get(this.categoriasUrl)
                .toPromise()
                .then(response => response.json().data as Categoria[])

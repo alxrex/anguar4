@@ -11,13 +11,11 @@ import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
-import { CategoriasComponent }  from './catalogos/categorias.component';
-import { CategoriasService }   from './catalogos/categorias.service';
 
-import { HeroesComponent }      from './heroes.component';
-import { HeroDetailComponent }  from './hero-detail.component';
-import { HeroService }          from './hero.service';
-import { HeroSearchComponent }  from './hero-search.component';
+import { CategoriasComponent }  	from './catalogos/categorias.component';
+import { CategoriaDetailComponent } from './catalogos/categoria-detail.component';
+import { CategoriasService }   		from './catalogos/categorias.service';
+import { CategoriaSearchComponent }  from './catalogos/categoria-search.component';
 
 @NgModule({
   imports: [
@@ -31,9 +29,8 @@ import { HeroSearchComponent }  from './hero-search.component';
     AppComponent,
     DashboardComponent,
     CategoriasComponent,
-    HeroDetailComponent,
-    HeroesComponent,
-    HeroSearchComponent
+    CategoriaDetailComponent,
+    CategoriaSearchComponent
   ],
   providers: [ CategoriasService ],
   bootstrap: [ AppComponent ]

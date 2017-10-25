@@ -18,9 +18,9 @@ export class CategoriasComponent implements OnInit {
     private categoriasService: CategoriasService,
     private router: Router) { }
 
-  getCategorias(): void {
+  getCategories(): void {
     this.categoriasService
-        .getCategorias()
+        .getCategories()
         .then(categorias => this.categorias = categorias);
   }
 
@@ -44,7 +44,7 @@ export class CategoriasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCategorias();
+    this.getCategories();
   }
 
   onSelect(categoria: Categoria): void {
