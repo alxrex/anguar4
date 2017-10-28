@@ -14,18 +14,6 @@ export class CategoriasService {
 
   constructor(private http: Http) { }
 
-  /*getData():any {
-    return this.http.get(this.categoriasUrl)
-    .map((res:Response)=> res.json());
-  }
-
-  getCategories():any {
-    this.getData().subscribe(data=>{
-      console.log(data);
-      this.data = data;
-    });
-  }
-*/
   getCategories(): Promise<Categoria[]> {
     console.log("DESDE SERVICE");
     console.log("Ruta: "+this.categoriasUrl);
