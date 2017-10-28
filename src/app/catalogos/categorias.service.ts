@@ -1,5 +1,5 @@
 import { Injectable }    from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Response } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -9,14 +9,29 @@ import { Categoria } from './categoria';
 export class CategoriasService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private categoriasUrl = 'api/categoria';  // URL to web api
+  private categoriasUrl = "http://localhost/restaurant/public/api/categoria";  // URL to web api
+  //data: any = {};
 
   constructor(private http: Http) { }
 
+  /*getData():any {
+    return this.http.get(this.categoriasUrl)
+    .map((res:Response)=> res.json());
+  }
+
+  getCategories():any {
+    this.getData().subscribe(data=>{
+      console.log(data);
+      this.data = data;
+    });
+  }
+*/
   getCategories(): Promise<Categoria[]> {
+    console.log("DESDE SERVICE");
+    console.log("Ruta: "+this.categoriasUrl);
     return this.http.get(this.categoriasUrl)
                .toPromise()
-               .then(response => response.json().data as Categoria[])
+               .then(response => response.json() as Categoria[])
                .catch(this.handleError);
   }
 

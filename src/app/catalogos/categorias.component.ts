@@ -16,12 +16,16 @@ export class CategoriasComponent implements OnInit {
 
   constructor(
     private categoriasService: CategoriasService,
-    private router: Router) { }
+    private router: Router) {
+          console.log('Hola GABO');
+     }
 
   getCategories(): void {
-    this.categoriasService
-        .getCategories()
+    console.log('Getting Categories');
+    this.categoriasService.
+        getCategories()
         .then(categorias => this.categorias = categorias);
+    console.log('GOT Categories');
   }
 
   add(nombre: string): void {

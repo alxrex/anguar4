@@ -9,14 +9,14 @@
   <li *ngFor="let categoria of categorias" (click)="onSelect(categoria)"
       [class.selected]="categoria === selectedCategoria">
     <span class="badge">{{categoria.id}}</span>
-    <span>{{categoria.name}}</span>
+    <span>{{categoria.nombre}}</span>
     <button class="delete"
       (click)="delete(categoria); $event.stopPropagation()">x</button>
   </li>
 </ul>
 <div *ngIf="selectedCategoria">
   <h2>
-    {{selectedCategoria.name | uppercase}} es mi categoria
+    {{selectedCategoria.nombre | uppercase}} es mi categoria
   </h2>
   <button (click)="gotoDetail()">Ver Detalle</button>
 </div>

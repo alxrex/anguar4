@@ -52,6 +52,9 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {}
+    "component": {},
+     "serve": {
+      "host": "http://localhost/restaurante/public/"
+    }
   }
 }

@@ -13,7 +13,7 @@ export class CategoriaSearchService {
 
   search(term: string): Observable<Categoria[]> {
     return this.http
-               .get(`api/categorias/?name=${term}`)
+               .get(`http://localhost/restaurant/public/api/categoria/?name=${term}`)
                .map(response => response.json().data as Categoria[]);
   }
 }
