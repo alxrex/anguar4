@@ -28,7 +28,7 @@ export class CategoriasService {
     const url = `${this.categoriasUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as Categoria)
+      .then(response => response.json() as Categoria)
       .catch(this.handleError);
   }
 
@@ -44,7 +44,7 @@ export class CategoriasService {
     return this.http
       .post(this.categoriasUrl, JSON.stringify({nombre: nombre}), {headers: this.headers})
       .toPromise()
-      .then(res => res.json().data as Categoria)
+      .then(res => res.json() as Categoria)
       .catch(this.handleError);
   }
 

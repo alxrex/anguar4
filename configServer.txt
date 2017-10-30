@@ -1,0 +1,9 @@
+// ---------
+//When we are goint go build:
+,"serve": {"host": "http://localhost/restaurante/public/"}
+
+
+// ---------
+// LARAVEL Requirement
+//No 'Access-Control-Allow-Origin' from Angular cli
+https://github.com/barryvdh/laravel-cors
